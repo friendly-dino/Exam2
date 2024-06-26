@@ -12,8 +12,7 @@ namespace FileCopyService.Service
             {
                 foreach (var item in Directory.GetFiles(sourceFolder))
                 {
-                    string destFile = Path.Combine(destinationFolder, Path.GetFileName(item));
-                    FileCopy(item, destFile, true);
+                    FileCopy(item, destinationFolder, true);
                 }
                 return Task.CompletedTask;
             }
@@ -23,21 +22,6 @@ namespace FileCopyService.Service
                 throw;
             }
         }
-
-        public async void CopyFile(FileSystemEventArgs e, string destinationFolder)
-        {
-            try
-            {
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            throw new NotImplementedException();
-        }
-
         public void CreateDir(string sourceFolder, string destinationFolder)
         {
             Directory.CreateDirectory(sourceFolder);
@@ -54,17 +38,16 @@ namespace FileCopyService.Service
             {
                 //added delay to avoid IOException
                 await Task.Delay(1000);
-                string destFile = Path.Combine(destinationFolder, Path.GetFileName(e.FullPath));
-                FileCopy(e.FullPath, destFile, true);
+                FileCopy(e.FullPath, destinationFolder, true);
             }
             catch (Exception ex)
             {
                 _copyLogger.LogError(ex, "Error copying file {SourceFile}", e.FullPath);
             }
         }
-        private void FileCopy(string sourceFileName, string destFileName, bool IsOverwrite)
+        private void FileCopy(string sourceFileName, string destinationFolder, bool IsOverwrite)
         {
-            ///tring destFile = Path.Combine(destinationFolder, Path.GetFileName(e.FullPath));
+            string destFileName = Path.Combine(destinationFolder, Path.GetFileName(sourceFileName));
             File.Copy(sourceFileName, destFileName, IsOverwrite);
             _copyLogger.LogInformation("Copied file {SourceFile} to {DestinationFile}", sourceFileName, destFileName);
         }
