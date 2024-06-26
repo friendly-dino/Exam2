@@ -2,16 +2,22 @@
 
 namespace FileCopyService.Service
 {
-    internal class CopyService : ICopyService
+    public class CopyService : ICopyService
     {
-        public Task CopyFromSource()
+        public Task CopyFromSource(CancellationToken stoppingToken)
         {
-            throw new NotImplementedException();
+
+
+
+            return Task.CompletedTask;
+
+
         }
 
-        public Task CreateDir()
+        public void CreateDir(string sourceFolder, string destinationFolder)
         {
-            throw new NotImplementedException();
+            Directory.CreateDirectory(sourceFolder);
+            Directory.CreateDirectory(destinationFolder);
         }
     }
 }
