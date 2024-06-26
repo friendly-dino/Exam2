@@ -1,8 +1,8 @@
 ﻿namespace FileCopyService.Interface
 {
-    internal interface ICopyService
+    public interface ICopyService
     {
-        Task CreateDir();
-        Task CopyFromSource();
+        void CreateDir(string sourceFolder, string destinationFolder);
+        Task CopyFromSource(CancellationToken stoppingToken);
     }
 }
