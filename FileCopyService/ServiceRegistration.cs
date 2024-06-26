@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging.EventLog;
+﻿using FileCopyService.Interface;
+using FileCopyService.Service;
+using Microsoft.Extensions.Logging.EventLog;
 
 namespace FileCopyService
 {
@@ -8,6 +10,7 @@ namespace FileCopyService
         {
             builder.Logging.AddFilter<EventLogLoggerProvider>(level => level >= LogLevel.Information);
             builder.Services.AddHostedService<Worker>();
+            builder.Services.AddSingleton<ICopyService, CopyService>();
 
             return builder;
         }
