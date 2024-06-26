@@ -1,6 +1,5 @@
 ﻿using FileCopyService.Interface;
 using FileCopyService.Service;
-using Microsoft.Extensions.Logging.EventLog;
 using Serilog;
 namespace FileCopyService
 {
@@ -14,7 +13,6 @@ namespace FileCopyService
            .CreateLogger();
 
             builder.Logging.ClearProviders().AddSerilog();
-            builder.Logging.AddFilter<EventLogLoggerProvider>(level => level >= LogLevel.Information);
             builder.Services.AddHostedService<Worker>();
             builder.Services.AddSingleton<ICopyService, CopyService>();
 
