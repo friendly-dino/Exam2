@@ -15,7 +15,6 @@ namespace FileCopyService
             builder.Logging.ClearProviders().AddSerilog();
             builder.Services.AddHostedService<Worker>();
             builder.Services.AddSingleton<ICopyService, CopyService>();
-
             return builder;
         }
     }
