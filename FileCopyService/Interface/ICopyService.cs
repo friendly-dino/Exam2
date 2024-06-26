@@ -9,6 +9,7 @@
         /// <param name="destinationFolder">The destination folder to paste the copied files.</param>
         void CreateDir(string sourceFolder, string destinationFolder);
         Task CopyFile(string sourceFolder, string destinationFolder);
+        void CopyFile(FileSystemEventArgs e, string destinationFolder);
         void OnChanged(FileSystemEventArgs e, string destinationFolder);
         bool IsFolderEmpty(string path);
     }

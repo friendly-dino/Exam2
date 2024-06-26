@@ -10,15 +10,34 @@ namespace FileCopyService.Service
         {
             try
             {
-
+                foreach (var item in Directory.GetFiles(sourceFolder))
+                {
+                    string destFile = Path.Combine(destinationFolder, Path.GetFileName(item));
+                    FileCopy(item, destFile, true);
+                }
                 return Task.CompletedTask;
             }
             catch (Exception ex)
             {
                 _copyLogger.LogError(ex, "Error occured while copying.");
-                throw ex;
+                throw;
             }
         }
+
+        public async void CopyFile(FileSystemEventArgs e, string destinationFolder)
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            throw new NotImplementedException();
+        }
+
         public void CreateDir(string sourceFolder, string destinationFolder)
         {
             Directory.CreateDirectory(sourceFolder);
@@ -36,13 +55,18 @@ namespace FileCopyService.Service
                 //added delay to avoid IOException
                 await Task.Delay(1000);
                 string destFile = Path.Combine(destinationFolder, Path.GetFileName(e.FullPath));
-                File.Copy(e.FullPath, destFile, true);
-                _copyLogger.LogInformation("Copied file {SourceFile} to {DestinationFile}", e.Name, destFile);
+                FileCopy(e.FullPath, destFile, true);
             }
             catch (Exception ex)
             {
                 _copyLogger.LogError(ex, "Error copying file {SourceFile}", e.FullPath);
             }
+        }
+        private void FileCopy(string sourceFileName, string destFileName, bool IsOverwrite)
+        {
+            ///tring destFile = Path.Combine(destinationFolder, Path.GetFileName(e.FullPath));
+            File.Copy(sourceFileName, destFileName, IsOverwrite);
+            _copyLogger.LogInformation("Copied file {SourceFile} to {DestinationFile}", sourceFileName, destFileName);
         }
     }
 }
