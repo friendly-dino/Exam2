@@ -39,6 +39,9 @@ namespace FileCopyService
                 await Task.Delay(10000, stoppingToken);
             }
             #endregion
+
+            watcher1?.Dispose();
+            base.Dispose();
         }
     }
 }
