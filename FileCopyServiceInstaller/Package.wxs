@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?define Name = "File Copy Service" ?>
+<?define Manufacturer = "Microsoft" ?>
+<?define Version = "1.0.0.0" ?>
+<?define UpgradeCode = "7c42e7ae-f7fe-4ab3-b9b3-a9d4182d849e" ?>
+
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="$(Name)" Manufacturer="$(Manufacturer)" Version="$(Version)" UpgradeCode="$(var.UpgradeCode)" Compressed="true">
+    <MajorUpgrade DowngradeErrorMessage="A later version of File Copy Service is already installed. Setup will now exit." />
+
+    <Feature Id="Main">
+      <ComponentGroupRef Id="ExampleComponent" />
+    </Feature>
+
+    <Directory Id="MYTARGETDIR" Name="MySourceDir">
+      <Directory Id="ProgramFilesFolder">
+
+        <!-- Create a folder inside program files -->
+        <Directory Id="ROOTDIRECTORY" Name="$(var.Manufacturer)">
+
+           <!--Create a folder within the parent folder given the name--> 
+          <Directory Id="INSTALLFOLDER1" Name="$(Name)" />
+        </Directory>
+      </Directory>
+    </Directory>
+      <ComponentGroup Id="ExampleComponent" Directory="INSTALLFOLDER">
+      <Component Id="ExampleComponents" Bitness="always64">
+        
+        <File Id="FileCopyService.exe"
+             Source="$(var.FileCopyService.TargetDir)publish\win-x64\FileCopyService.exe"
+             KeyPath="yes" />
+        
+        <ServiceInstall Id="ServiceInstaller"
+                       Type="ownProcess"
+                       Name="FileCopyService"
+                       DisplayName="$(var.Name)"
+                       Description="A windows service that copies files in the source folder to destination folder."
+                       Start="auto"
+                       ErrorControl="normal"
+                       Account="NT AUTHORITY\LocalService"/>
+
+        <!-- Tell WiX to start the Service -->
+        <ServiceControl Id="StartService"
+                        Start="install"
+                        Stop="both"
+                        Remove="uninstall"
+                        Name="FileCopyService"
+                        Wait="yes" />
+      </Component>
+      </ComponentGroup>
+
+  
+  </Package>
+</Wix>

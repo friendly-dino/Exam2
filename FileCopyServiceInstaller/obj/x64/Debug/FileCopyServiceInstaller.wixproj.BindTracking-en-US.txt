@@ -1,0 +1,5 @@
+BuiltContentOutput	D:\GTSoftware\Traxion\Exam2\FileCopyServiceInstaller\obj\x64\Debug\en-US\cab1.cab
+BuiltPdbOutput	D:\GTSoftware\Traxion\Exam2\FileCopyServiceInstaller\obj\x64\Debug\en-US\FileCopyServiceInstaller.wixpdb
+BuiltTargetOutput	D:\GTSoftware\Traxion\Exam2\FileCopyServiceInstaller\obj\x64\Debug\en-US\FileCopyServiceInstaller.msi
+Input	D:\GTSoftware\Traxion\Exam2\FileCopyService\bin\Debug\net8.0\publish\win-x64\FileCopyService.exe
+Intermediate	D:\GTSoftware\Traxion\Exam2\FileCopyServiceInstaller\obj\x64\Debug\en-US\cab1.cab

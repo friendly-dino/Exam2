@@ -1,0 +1,8 @@
+D:\GTSoftware\Traxion\Exam2\FileCopyServiceInstaller\bin\x64\Debug\en-US\FileCopyServiceInstaller.msi
+D:\GTSoftware\Traxion\Exam2\FileCopyServiceInstaller\bin\x64\Debug\en-US\cab1.cab
+D:\GTSoftware\Traxion\Exam2\FileCopyServiceInstaller\bin\x64\Debug\en-US\FileCopyServiceInstaller.wixpdb
+D:\GTSoftware\Traxion\Exam2\FileCopyServiceInstaller\obj\x64\Debug\FileCopyServiceInstaller.wixproj.CoreCompileInputs.cache
+D:\GTSoftware\Traxion\Exam2\FileCopyServiceInstaller\obj\x64\Debug\en-US\cab1.cab
+D:\GTSoftware\Traxion\Exam2\FileCopyServiceInstaller\obj\x64\Debug\en-US\FileCopyServiceInstaller.msi
+D:\GTSoftware\Traxion\Exam2\FileCopyServiceInstaller\obj\x64\Debug\en-US\FileCopyServiceInstaller.wixpdb
+D:\GTSoftware\Traxion\Exam2\FileCopyServiceInstaller\obj\x64\Debug\FileCopyServiceInstaller.wixproj.BindTracking-en-US.txt

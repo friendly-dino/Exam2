@@ -1,0 +1,64 @@
+{
+  "version": 3,
+  "targets": {
+    "native,Version=v0.0": {},
+    "native,Version=v0.0/win": {},
+    "native,Version=v0.0/win-arm64": {},
+    "native,Version=v0.0/win-x64": {},
+    "native,Version=v0.0/win-x86": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "native,Version=v0.0": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Jansen.Magbojos\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\GTSoftware\\Traxion\\Exam2\\FileCopyServiceInstaller\\FileCopyServiceInstaller.wixproj",
+      "projectName": "FileCopyServiceInstaller",
+      "projectPath": "D:\\GTSoftware\\Traxion\\Exam2\\FileCopyServiceInstaller\\FileCopyServiceInstaller.wixproj",
+      "packagesPath": "C:\\Users\\Jansen.Magbojos\\.nuget\\packages\\",
+      "outputPath": "D:\\GTSoftware\\Traxion\\Exam2\\FileCopyServiceInstaller\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Jansen.Magbojos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "native"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/grantthorntonph/_packaging/Nexus.Library%40Release/nuget/v3/index.json": {}
+      },
+      "frameworks": {
+        "native": {
+          "targetAlias": "native",
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "native": {
+        "targetAlias": "native"
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-arm64": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}
